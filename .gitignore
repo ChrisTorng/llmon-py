@@ -1,0 +1,4 @@
+.venv/
+models/
+chat_history.log
+model_output-*.wav

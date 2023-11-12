@@ -5,7 +5,7 @@ import warnings
 
 import torch
 from TTS.api import TTS 
-from llama_cpp import Llama
+from llama_cpp import Llama # llama-cpp-python
 from pywhispercpp.model import Model
 
 import readchar
@@ -89,7 +89,8 @@ class Client():
         self.white = 37
 
         self.text_ts_model = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device=self.device)
-        self.speech_tt_model = Model('./stt/ggml-tiny.bin')
+        # self.speech_tt_model = Model('./stt/ggml-tiny.bin')
+        self.speech_tt_model = Model('small')
 
     def log_chat(self, user_message=str, model_message=str):
         write_type = 'w'
